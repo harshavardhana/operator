@@ -152,7 +152,7 @@ func (t *Tenant) HasCertConfig() bool {
 // ExternalCert returns true is the user has provided a secret
 // that contains CA cert, server cert and server key
 func (t *Tenant) ExternalCert() bool {
-	return t.Spec.ExternalCertSecret != nil
+	return len(t.Spec.ExternalCertSecret) > 0
 }
 
 // ExternalCaCerts returns true is the user has provided a
